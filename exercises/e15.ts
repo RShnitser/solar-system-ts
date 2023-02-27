@@ -2,7 +2,13 @@
 // Return an array of Planets' names without moons
 // Return example: ['name1', 'name2', ... , 'nameN']
 
-export function getPlanetsWithNoMoons(planets) {}
+import { Planet } from "../data/data";
+
+export function getPlanetsWithNoMoons(planets: Planet[]) {
+    return planets.filter((planet) => {
+        return planet.moonsCount === undefined;
+    })
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-15"

@@ -2,7 +2,11 @@
 // Return a given asteroid object of data
 // make sure that you destructure your parameters
 
-export function getAsteroidDataByName({ allData, asteroidName }) {}
+import { AllData } from "../data/data";
+
+export function getAsteroidDataByName({ allData, asteroidName } : {allData: AllData, asteroidName: string}) {
+    return allData.asteroids.find((asteroid) => asteroid.name.toLowerCase() === asteroidName.toLowerCase());
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-10"

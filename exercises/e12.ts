@@ -2,7 +2,13 @@
 // Return the sum of all moons for all planets
 // Return example: 42
 
-export const allPlanetsMoonsCount = (data) => {};
+import { AllData } from "../data/data";
+
+export const allPlanetsMoonsCount = (data: AllData) => {
+    return data.planets.reduce((acc: number, planet) => {
+        return planet.moonsCount !== undefined ? acc + planet.moonsCount : acc;
+    }, 0)
+};
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-12"
